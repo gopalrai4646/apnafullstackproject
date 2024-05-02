@@ -1,0 +1,127 @@
+<% layout("/layout/boilerplate")-%>
+  <body>
+    <div class="row mt-3">
+      <div class="col-8 offset-2">
+      <h3>Create new listing</h3>
+      <br>
+      <br>
+      <form action="/listing" method="post" class="needs-validation" novalidate enctype="multipart/form-data">
+        <div class="mb-2">
+          <label for="title" class="form-label">Title</label>
+          <input required
+            type="text"
+            name="listing[title]"
+            placeholder="Add a catchy title"
+            class="form-control"
+          />
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">Please enter Title</div>
+        </div>
+   
+        <div class="mb-2">
+          <label for="description" class="form-label">Description</label>
+          <textarea required
+            type="text"
+            name="listing[description]"
+            class="form-control"
+            placeholder="description"
+          ></textarea>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">Please enter meaningfull description</div>
+
+        </div>
+        <div class="mb-2">
+          <label for="image" class="form-label"> upload listing Image </label>
+          <input
+            type="file" required
+            name="listing[image]"
+            id=""
+            class="form-control"
+          />
+        </div>
+        <div class="row">
+          <div class="mb-2 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input required
+     
+              name="listing[price]"
+              placeholder="1200"
+              class="form-control"
+            />
+            <div class="invalid-feedback">Please enter valid Price</div>
+          </div>
+          <div class="mb-2 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text" required
+              name="listing[country]"
+              placeholder="India"
+              class="form-control"
+            />
+            <div class="invalid-feedback">Please enter valid Country</div>
+
+          </div>
+        </div>
+        
+        <div class="mb-2">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text" required
+            name="listing[location]"
+            placeholder="jaipur,Rajasthan"
+            class="form-control"
+          />
+          <div class="invalid-feedback">Please enter exact Location</div>
+
+        </div>
+  
+       <fieldset>
+        <legend>Choose the category of your place or Ignore if not matching </legend>
+        <div class="category">
+          <div class="form-check ">
+          <label class="form-label" for="Farms">Farms</label>
+          <input type="radio" name="listing[category]" id="Farms"  value="Farms"></div>
+          <div class="form-check ">
+          <label  class="form-label" for="Trending">Trending</label>
+          <input type="radio" name="listing[category]" id="Trending" value="Trending"></div>
+          <div class="form-check ">
+          <label  class="form-label" for="Rooms">Rooms</label>
+          <input type="radio" name="listing[category]" id="Rooms" value="Rooms"></div>
+          <div class="form-check ">
+          <label  class="form-label" for="Iconic Cities">Iconic Cities</label>
+          <input type="radio" name="listing[category]" id="Iconic Cities" value="Iconic Cities"></div>
+          <div class="form-check ">
+          <label class="form-label" for="Mountains">Mountains</label>
+          <input type="radio" name="listing[category]" id="Mountains" value="Mountains"></div>
+          <div class="form-check">
+          <label class="form-label" for="Castles">Castles</label>
+          <input type="radio" name="listing[category]" id="Castles" value="Castles"></div>
+          <div class="form-check">
+          <label  class="form-label" for="Camping">Camping</label>
+          <input type="radio" name="listing[category]" id="Camping" value="Camping"></div>
+          <div class="form-check">
+          <label for="Amazing Pools">Amazing Pools</label>
+          <input type="radio" name="listing[category]" id="Amazing Pools" value="Amazing Pools"></div>
+          <div class="form-check">
+            <label for="Beach">Beach</label>
+            <input type="radio" name="listing[category]" id="Beach" value="Beach"></div>
+            <div class="form-check">
+              <label for="HouseBoat">HouseBoat</label>
+              <input type="radio" name="listing[category]" id="HouseBoat" value="HouseBoat"></div>
+                
+        
+        </div>
+       
+       </fieldset>
+  
+        <button class="btn btn-dark mt-3 add-btn">Add</button>
+      </form>
+      <br><br>
+    </div>
+  </div>
+  </body>
+</html>
