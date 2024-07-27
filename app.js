@@ -17,6 +17,8 @@ app.engine('ejs',ejsMate)
 const Expresssession=require("express-session");
 const MongoStore=require("connect-mongo");
 const flash=require("connect-flash") 
+const wrapasync=require("./utile/wrapasync.js");
+const ListingController=require("./controllers/listing.js")
 const listingRouter=require("./routes/listing.js")
 const reviewRouter=require("./routes/review.js")
 const userRouter=require("./routes/user.js")
@@ -106,8 +108,9 @@ app.use("/",userRouter);
 // console.log("sample saved");
 // res.send("successfully ")
 // })
+app.get("/",wrapasync(ListingController.index));
 app.all("*",(req,res,next)=>{
-next(new ExpressError(404,"page not found"))
+next(new ExpressError(404,"Page not found"))
 })
 app.use((err,req,res,next)=>{
   let {status=500,message="somthing went wrong"}=err;
